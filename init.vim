@@ -96,18 +96,21 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 Plug 'joshdick/onedark.vim'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'Yggdroot/LeaderF'
 
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'preservim/tagbar'
 Plug 'easymotion/vim-easymotion'
@@ -116,6 +119,13 @@ Plug 'junegunn/vim-easy-align'
 
 " Initialize plugin system
 call plug#end()
+
+" 快捷进入normal模式
+inoremap jj <Esc>`^
+
+" 快捷保存
+inoremap <leader>w <Esc>:w<CR>
+noremap <leader>w :w<CR>
 
 " 分屏窗口移动
 nnoremap <c-j> <c-w>j
@@ -134,6 +144,35 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 
 " theme
 colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
+
+" dashboard
+let g:dashboard_default_executive ='clap'
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>dh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>df :DashboardFindFile<CR>
+nnoremap <silent> <Leader>dc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>dw :DashboardFindWord<CR>
+nnoremap <silent> <Leader>dm :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>dn :DashboardNewFile<CR>
+let g:dashboard_custom_shortcut={
+\ 'last_session'       : '<leader> s l',
+\ 'find_history'       : '<leader> d h',
+\ 'find_file'          : '<leader> d f',
+\ 'new_file'           : '<leader> d n',
+\ 'change_colorscheme' : '<leader> d c',
+\ 'find_word'          : '<leader> d w',
+\ 'book_marks'         : '<leader> d m',
+\ }
+let g:dashboard_custom_header = [
+\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\]
 
 " airline
 let g:airline_theme = "onedark"
@@ -212,8 +251,8 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 
 " vim-easymotion
 let g:EasyMotion_smartcase = 1
-map <leader>w <Plug>(easymotion-bd-w)
-nmap <leader>w <Plug>(easymotion-overwin-w)
+map <leader><leader>w <Plug>(easymotion-bd-w)
+nmap <leader><leader>w <Plug>(easymotion-overwin-w)
 
 " vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
