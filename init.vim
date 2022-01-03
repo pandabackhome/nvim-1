@@ -96,7 +96,6 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 Plug 'joshdick/onedark.vim'
-"Plug 'mhinz/vim-startify'
 Plug 'glepnir/dashboard-nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -110,12 +109,15 @@ Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'preservim/tagbar'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'junegunn/vim-easy-align'
+Plug 'jiangmiao/auto-pairs'
+Plug 'luochen1990/rainbow'
 
 " Initialize plugin system
 call plug#end()
@@ -411,3 +413,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" Bracket auto pairs and rainbow
+let g:rainbow_active = 1
