@@ -111,6 +111,7 @@ Plug 'preservim/nerdtree' |
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
 
 Plug 'preservim/tagbar'
 Plug 'easymotion/vim-easymotion'
