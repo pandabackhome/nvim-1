@@ -28,9 +28,9 @@ set cinoptions=g0,:0,N-s,(0    " 设置C/C++语言的具体缩进方式
 set smartindent          " 智能的选择对其方式
 filetype indent on       " 自适应不同语言的智能缩进
 set expandtab            " 将制表符扩展为空格
-set tabstop=4            " 设置编辑时制表符占用空格数
-set shiftwidth=4         " 设置格式化时制表符占用空格数
-set softtabstop=4        " 设置4个空格为制表符
+set tabstop=2            " 设置编辑时制表符占用空格数
+set shiftwidth=2         " 设置格式化时制表符占用空格数
+set softtabstop=2        " 设置4个空格为制表符
 set smarttab             " 在行和段开始处使用制表符
 set nowrap               " 禁止折行
 set backspace=2          " 使用回车键正常处理indent,eol,start等
@@ -110,12 +110,11 @@ Plug 'preservim/nerdtree' |
             \ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 
 Plug 'preservim/tagbar'
 Plug 'easymotion/vim-easymotion'
-Plug 'terryma/vim-smooth-scroll'
+Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
@@ -265,12 +264,6 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 let g:EasyMotion_smartcase = 1
 map <leader><leader>w <Plug>(easymotion-bd-w)
 nmap <leader><leader>w <Plug>(easymotion-overwin-w)
-
-" vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " coc-nvim
 " Always show the signcolumn, otherwise it would shift the text each time
