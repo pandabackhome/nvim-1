@@ -101,6 +101,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'Yggdroot/LeaderF'
@@ -214,7 +215,7 @@ let g:airline_right_alt_sep = ''
 
 " nerdtree
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
-let g:NERDTreeWinSize = 38
+let g:NERDTreeWinSize = 32
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
@@ -257,7 +258,7 @@ let g:Lf_WildIgnore = {
 let g:Lf_UseCache = 0
 
 " tagbar
-let g:tagbar_width = 30
+let g:tagbar_width = 28
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 
 " vim-easymotion
