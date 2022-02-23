@@ -72,12 +72,6 @@ set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 " gvim/macvim设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui_running")
-    let system = system('uname -s')
-    if system == "Darwin\n"
-        set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18 " 设置字体
-    else
-        set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 18      " 设置字体
-    endif
     set guioptions-=m           " 隐藏菜单栏
     set guioptions-=T           " 隐藏工具栏
     set guioptions-=L           " 隐藏左侧滚动条
@@ -192,9 +186,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 0
 let g:airline#extensions#tabline#fnametruncate = 16
 let g:airline#extensions#tabline#fnamecollapse = 2
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-nnoremap <silent><c-q> :bp<bar>bd #<CR>
-nnoremap <silent><c-n> :bn<CR>
-nnoremap <silent><c-p> :bp<CR>
+nnoremap <silent>X :bp<bar>bd #<CR>
+nnoremap <silent>K :bn<CR>
+nnoremap <silent>J :bp<CR>
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -313,8 +307,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Use <c-i> to show documentation in preview window.
+nnoremap <silent><c-i> :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
