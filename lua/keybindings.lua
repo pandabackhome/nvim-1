@@ -51,6 +51,7 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 map("v", "p", '"_dP', opt)
 
 -- 退出
+map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>q", ":q<CR>", opt)
 map("n", "<leader>qq", ":q!<CR>", opt)
 map("n", "<leader>Q", ":qa!<CR>", opt)
