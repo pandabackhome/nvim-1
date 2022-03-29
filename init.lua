@@ -7,6 +7,7 @@ require("plugins")
 -- 主题设置
 require("colorscheme")
 -- 插件配置
+require("plugin-config.symbols-outline")
 require("plugin-config.nvim-tree")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.nvim-autopairs")
