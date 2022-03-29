@@ -217,11 +217,11 @@ pluginKeys.mapLSP = function(mapbuf)
   --]]
   mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
   -- go xx
-  --[[
-  Lspsaga 替换 gd
   mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
-  --]]
-  mapbuf("n", "gd", "<cmd>Lspsaga preview_definition<CR>", opt)
+  mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+  mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+  -- preview
+  mapbuf("n", "K", "<cmd>Lspsaga preview_definition<CR>", opt)
   --[[
   Lspsaga 替换 gh
   mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
@@ -242,24 +242,14 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>",opt)
   mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
-  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
   -- 未用
-  -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-  -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+  -- mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
   -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
   -- mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
   -- mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
   -- mapbuf('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
-
-end
-
--- typescript 快捷键
-pluginKeys.mapTsLSP = function(mapbuf)
-  mapbuf("n", "gs", ":TSLspOrganize<CR>", opt)
-  mapbuf("n", "gr", ":TSLspRenameFile<CR>", opt)
-  mapbuf("n", "gi", ":TSLspImportAll<CR>", opt)
 end
 
 -- nvim-cmp 自动补全

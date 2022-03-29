@@ -16,7 +16,7 @@ local opts = {
 }
 
 return {
-  on_ready = function(server)
+  on_setup = function(server)
     -- Initialize the LSP via rust-tools instead
     require("rust-tools").setup({
       -- The "server" property provided in rust-tools setup function are the

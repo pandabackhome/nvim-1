@@ -12,7 +12,7 @@ local opts = {
   end,
 }
 return {
-  on_ready = function(server)
+  on_setup = function(server)
     server:setup(opts)
   end,
 }

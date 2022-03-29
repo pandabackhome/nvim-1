@@ -99,7 +99,10 @@ packer.startup({
     use("rafamadriz/friendly-snippets")
     -- ui
     use("onsails/lspkind-nvim")
-    use("tami5/lspsaga.nvim" )
+    use({
+      "tami5/lspsaga.nvim",
+      -- branch = 'nvim6.0'
+    })
 
     --------------------- colorschemes --------------------
     -- tokyonight
