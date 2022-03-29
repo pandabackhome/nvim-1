@@ -2,16 +2,21 @@
 
 local wk = require("which-key")
 local mappings = {
-  q = { ":q<CR>", "QUit" },
+  q = { ":q<CR>", "Quit" },
+  qq = { ":q!<CR>", "Quit" },
   Q = { ":wq<CR>", "Save & Quit" },
   w = { ":w<CR>", "Save" },
-  E = { ":e ~/.config/nvim/init.vim<CR>", "Edit config" },
-  f = { ":Telescope find_files<CR>", "Telescope Find Files" },
-  r = { ":Telescope live_grep<CR>", "Telescope Live Grep" },
-  a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
-  g = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show line diagnostics" },
+  E = { ":e ~/.config/nvim/init.lua<CR>", "Edit config" },
+  f = {
+    name = "Telescope Files",
+    f = { ":Telescope find_files<CR>", "Telescope Find Files" },
+    g = { ":Telescope live_grep<CR>", "Telescope Live Grep" },
+    r = { ":Telescope oldfiles<CR>", "Telescope Recent Files" },
+  },
   l = {
     name = "LSP",
+    a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
+    g = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show line diagnostics" },
     i = { ":LspInfo<cr>", "Connected Language Servers" },
     A = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add workspace folder" },
     R = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove workspace folder" },
@@ -23,5 +28,6 @@ local mappings = {
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Set loclist" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
   },
+  a = { ":ClangdSwitchSourceHeader<CR>", "ClangdSwitchSourceHeader" },
 }
 wk.register(mappings, { prefix = "<leader>" })

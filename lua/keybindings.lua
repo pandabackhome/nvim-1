@@ -50,11 +50,6 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 -- 在visual mode 里粘贴不要复制
 map("v", "p", '"_dP', opt)
 
--- 退出
-map("n", "<leader>w", ":w<CR>", opt)
-map("n", "<leader>q", ":q<CR>", opt)
-map("n", "<leader>qq", ":q!<CR>", opt)
-map("n", "<leader>Q", ":qa!<CR>", opt)
 -- insert 模式下，跳到行首行尾
 -- map("i", "<C-h>", "<ESC>I", opt)
 -- map("i", "<C-l>", "<ESC>A", opt)
@@ -163,9 +158,6 @@ map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 -- 关闭选中标签页
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
--- Telescope
-map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
-map("n", "<leader>fg", ":Telescope live_grep<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
   i = {
@@ -207,7 +199,8 @@ map("v", "<C-_>", "gcc", {
 })
 
 -- clangd
-map("n", "<leader>a", ":ClangdSwitchSourceHeader<CR>", opt)
+-- <leader> map see which-key.lua
+map("n", "<A-o>", ":ClangdSwitchSourceHeader<CR>", opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)

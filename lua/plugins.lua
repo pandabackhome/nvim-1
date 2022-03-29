@@ -69,11 +69,18 @@ packer.startup({
     use ("simrat39/symbols-outline.nvim")
     -- toggleterm
     use("akinsho/toggleterm.nvim")
-
     -- surround
     use("ur4ltz/surround.nvim")
     -- neoscroll
     use("karb94/neoscroll.nvim")
+    -- Comment
+    use("numToStr/Comment.nvim")
+    -- indent blankline
+    use("lukas-reineke/indent-blankline.nvim")
+    -- which-key
+    use("folke/which-key.nvim")
+    -- rust-tools
+    use("simrat39/rust-tools.nvim")
 
     --------------------- LSP --------------------
     -- lspconfig
@@ -83,7 +90,7 @@ packer.startup({
     -- snippet 引擎
     use("hrsh7th/vim-vsnip")
     -- 补全源
-    use ("hrsh7th/cmp-vsnip")
+    use("hrsh7th/cmp-vsnip")
     use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
     use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
     use("hrsh7th/cmp-path") -- { name = 'path' }
@@ -104,8 +111,6 @@ packer.startup({
       "ellisonleao/gruvbox.nvim",
       requires = {"rktjmp/lush.nvim"}
     })
-    -- zephyr
-    -- use("glepnir/zephyr-nvim")
     -- nord
     use("shaunsingh/nord.nvim")
     -- onedark
